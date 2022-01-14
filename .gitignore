@@ -1,0 +1,59 @@
+# compiled output
+api/dist
+api/node_modules
+
+# Logs
+api/logs
+api/*.log
+api/npm-debug.log*
+api/pnpm-debug.log*
+api/yarn-debug.log*
+api/yarn-error.log*
+api/lerna-debug.log*
+
+# OS
+api/.DS_Store
+
+# Tests
+api/coverage
+api/.nyc_output
+
+# IDEs and editors
+api/.idea
+api/.project
+api/.classpath
+api/.c9/
+api/*.launch
+api/.settings/
+api/*.sublime-workspace
+
+# IDE - VSCode
+api/.vscode/*
+api/!.vscode/settings.json
+api/!.vscode/tasks.json
+api/!.vscode/launch.json
+api/!.vscode/extensions.json
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+app/node_modules
+app/.pnp
+app/.pnp.js
+
+# testing
+app/coverage
+
+# production
+app/build
+
+# misc
+app/.DS_Store
+app/.env.local
+app/.env.development.local
+app/.env.test.local
+app/.env.production.local
+
+app/npm-debug.log*
+app/yarn-debug.log*
+app/yarn-error.log*
