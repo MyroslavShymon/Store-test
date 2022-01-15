@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core'
 import { AppModule } from './app.module'
 import { ValidationPipe } from '@nestjs/common'
-import { ProvideDocsService } from '../config/services'
+import { ProvideDocsService } from './infrastructure/docs'
 
 async function bootstrap() {
   const PORT = process.env.PORT || 5000

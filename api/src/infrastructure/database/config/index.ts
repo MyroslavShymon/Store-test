@@ -1,6 +1,6 @@
 import { TypeOrmModule } from '@nestjs/typeorm'
-import { ConfigService } from '../config.service'
-import { CONFIG_SERVICE } from '../../constants'
+import { ConfigService } from '../../nest'
+import { CONFIG_SERVICE } from '../../ioc'
 
 export function provideTypeOrmModule(entities) {
   TypeOrmModule.forRootAsync({

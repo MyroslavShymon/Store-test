@@ -1,9 +1,8 @@
 import { Global, Module } from '@nestjs/common'
 import { ConfigModule as NestDefaultConfigModule } from '@nestjs/config'
-import { CONFIG_SERVICE } from './constants'
-import { ConfigServiceProvider } from './providers'
 import { ServeStaticModule } from '@nestjs/serve-static'
 import * as path from 'path'
+import { ConfigServiceProvider, CONFIG_SERVICE } from '../ioc'
 
 @Global()
 @Module({
