@@ -11,11 +11,13 @@ import {
   RoleModule,
   ProductModule,
 } from './infrastructure/ioc'
+import { User } from './domains'
+import { DatabaseConfigService } from './infrastructure/database/typeorm/pg/config'
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    // provideTypeOrmModule(),
+    DatabaseConfigService.provideTypeOrmModule([User]),
     AuthModule,
     UserModule,
     ProductModule,
