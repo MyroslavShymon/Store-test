@@ -5,9 +5,7 @@ import { ConfigModule } from './infrastructure/nest'
 // import { provideTypeOrmModule } from '../config/services'
 import {
   UserModule,
-  RatingModule,
   BasketModule,
-  CategoryModule,
   RoleModule,
   ProductModule,
 } from './infrastructure/ioc'
@@ -21,9 +19,7 @@ import { DatabaseConfigService } from './infrastructure/database/typeorm/pg/conf
     AuthModule,
     UserModule,
     ProductModule,
-    RatingModule,
     BasketModule,
-    CategoryModule,
     RoleModule,
   ],
   controllers: [],

@@ -1,6 +1,6 @@
 import { FilterConditionBaseType } from '../types'
 import { FindManyOptions } from 'typeorm'
-import { BaseDeleteResponseInterface } from '../../shared/interfaces/delete-response.interface'
+import { BaseDeleteResponseInterface } from '../../shared'
 
 export interface BaseRepositoryInterface<T> {
   create(data: T): Promise<T>

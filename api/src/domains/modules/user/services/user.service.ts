@@ -1,10 +1,22 @@
-import { Injectable } from '@nestjs/common'
+import { Inject, Injectable } from '@nestjs/common'
 import { CreateUserDto, UpdateUserDto } from '../../../../application'
+import { InjectRepository } from '@nestjs/typeorm'
+import {
+  BASE_PROVIDER_REPOSITORY,
+  // BASE_PROVIDER_REPOSITORY,
+  UserRepository,
+} from '../../../../infrastructure/database/typeorm/pg/reposetories'
 
 @Injectable()
 export class UserService {
-  create(createUserDto: CreateUserDto) {
-    return 'This action adds a new user'
+  constructor(
+    @Inject(BASE_PROVIDER_REPOSITORY)
+    @InjectRepository(UserRepository)
+    private readonly userRepository: UserRepository,
+  ) {}
+
+  async create(createUserDto: CreateUserDto) {
+    return JSON.stringify(createUserDto)
   }
 
   findAll() {

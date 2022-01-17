@@ -9,7 +9,7 @@ import { ConfigServiceProvider, CONFIG_SERVICE } from '../ioc'
   imports: [
     NestDefaultConfigModule.forRoot({
       envFilePath:
-        process.env.NODE_ENV === 'production' ? '.env' : ' .development.env ',
+        process.env.NODE_ENV === 'production' ? '.env' : '.development.env',
     }),
     ServeStaticModule.forRoot({
       rootPath: path.resolve(__dirname, '..', '..', '..', '..', 'static'),

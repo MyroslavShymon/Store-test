@@ -7,8 +7,12 @@ import {
   Param,
   Delete,
 } from '@nestjs/common'
-import { UserService } from '../../../../domains/modules/user/services/user.service'
-import { CreateUserDto, UpdateUserDto } from '../../../../application'
+import {
+  CreateUserDto,
+  UpdateUserDto,
+  IsResponseEmpty,
+} from '../../../../application'
+import { UserService } from '../../../../domains'
 
 @Controller('user')
 export class UserController {
@@ -30,7 +34,12 @@ export class UserController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
+  update(
+    @Param('id') id: string,
+    @IsResponseEmpty()
+    @Body()
+    updateUserDto: UpdateUserDto,
+  ) {
     return this.userService.update(+id, updateUserDto)
   }
 

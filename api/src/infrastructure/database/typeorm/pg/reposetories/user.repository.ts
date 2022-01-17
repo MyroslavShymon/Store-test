@@ -5,6 +5,17 @@ import {
   UserRepositoryInterface,
 } from '../../../../../domains'
 import { InjectRepository } from '@nestjs/typeorm'
+import { Inject } from '@nestjs/common'
+
+// export const BASE_PROVIDER_REPOSITORY = 'BASE_PROVIDER_REPOSITORY'
+export const BASE_PROVIDER_REPOSITORY = 'BASE_PROVIDER_REPOSITORY'
+
+export function BaseRepositoryProvider(useClass) {
+  return {
+    provide: BASE_PROVIDER_REPOSITORY,
+    useClass,
+  }
+}
 
 @EntityRepository(User)
 export class UserRepository
@@ -12,7 +23,7 @@ export class UserRepository
   implements UserRepositoryInterface
 {
   constructor(
-    // @Inject(BASE_PROVIDER_REPOSITORY)
+    @Inject(BASE_PROVIDER_REPOSITORY)
     @InjectRepository(User)
     public readonly usersRepository: Repository<User>,
   ) {

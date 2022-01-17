@@ -11,7 +11,7 @@ export class User {
     example: 'myroslavshymon@gmail.com',
     description: 'email',
   })
-  @Column({ type: 'varchar', length: 100, nullable: false })
+  @Column({ type: 'varchar', length: 100, nullable: false, unique: true })
   public email: string
 
   @ApiProperty({ example: 'Miroslav Shymon', description: 'Name' })

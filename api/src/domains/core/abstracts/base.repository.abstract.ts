@@ -1,18 +1,13 @@
 import { FindManyOptions, Repository } from 'typeorm'
-import { BaseRepositoryInterface } from '../interfaces/base.repository.interface'
+import { BaseRepositoryInterface } from '../interfaces'
 import { NotFoundException } from '@nestjs/common'
 import { FilterConditionBaseType } from '../types'
-import {
-  BaseDeleteResponse,
-  BaseDeleteResponseInterface,
-} from '../../shared/interfaces/delete-response.interface'
+import { BaseDeleteResponse, BaseDeleteResponseInterface } from '../../shared'
 
-export abstract class BaseRepositoryAbstract<T>
-  implements BaseRepositoryInterface<T>
-{
+export class BaseRepositoryAbstract<T> implements BaseRepositoryInterface<T> {
   private entity: Repository<T>
 
-  protected constructor(entity: Repository<T>) {
+  protected constructor(entity: Repository<T | any>) {
     this.entity = entity
   }
 

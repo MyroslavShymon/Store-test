@@ -12,7 +12,7 @@ export class DatabaseConfigService {
         port: parseInt(configService.getValue('POSTGRES_PORT')),
         username: configService.getValue('POSTGRES_USER'),
         password: configService.getValue('POSTGRES_PASSWORD'),
-        database: configService.getValue('POSTGRES_DATABASE'),
+        database: configService.getValue('POSTGRES_DB'),
         synchronize: Boolean(configService.getValue('POSTGRES_SYNCHRONIZE')),
         autoLoadEntities: Boolean(
           configService.getValue('POSTGRES_AUTO_LOAD_ENTITIES'),
